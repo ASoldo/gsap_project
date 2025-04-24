@@ -22,13 +22,11 @@
     "@tresjs/post-processing": "^2.3.1",
     "@types/three": "^0.176.0",
     "@unhead/vue": "^2.0.8",
+    "gsap": "^3.12.7",
     "nuxt": "^3.16.2",
     "tailwindcss": "^4.1.4",
     "three": "^0.176.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
-  },
-  "devDependencies": {
-    "@hypernym/nuxt-gsap": "^2.4.3"
   }
 }

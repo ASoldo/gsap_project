@@ -1,4 +1,3 @@
-// composables/useScrollMarker.ts
 import { onMounted, type Ref } from 'vue'
 import { useNuxtApp } from '#app'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -22,10 +21,8 @@ export function useScrollMarker(
     const el = elementRef.value
     if (!el || !$gsap) return
 
-    // ensure the plugin is registered (nuxt-gsap may already do this)
     $gsap.registerPlugin(ScrollTrigger)
 
-    // default config
     const defaults: Parameters<typeof ScrollTrigger.create>[0] = {
       scroller: document.querySelector('#container'),
       trigger: el,
@@ -39,7 +36,6 @@ export function useScrollMarker(
       }
     }
 
-    // merge defaults + user overrides, then fire it off
     ScrollTrigger.create({ ...defaults, ...options })
   })
 }

@@ -20,8 +20,8 @@ onMounted(() => {
   const tl = $gsap.timeline({
     scrollTrigger: {
       trigger: el,
-      start: 'top bottom',  // 0%  → as soon as section top hits bottom of viewport
-      end: 'bottom top',  // 100%→ when section bottom hits top of viewport
+      start: 'top bottom',
+      end: 'bottom top',
       scrub: true,
       markers: true,
       onUpdate(self) {
@@ -30,10 +30,8 @@ onMounted(() => {
     }
   })
 
-  // 1) EMPTY tween: 0 → 0.1s (0%–10% scroll) → nothing happens
   tl.to({}, { duration: 0.1 })
 
-  // 2) FADE IN: 0.1–0.2s (10%–20%) 
   tl.fromTo(
     letters,
     { opacity: 0, y: 20 },
@@ -45,10 +43,8 @@ onMounted(() => {
     }
   )
 
-  // 3) HOLD: 0.2–0.8s (20%–80%) → letters stay put
   tl.to({}, { duration: 0.6 })
 
-  // 4) FADE OUT: 0.8–0.9s (80%–90%)
   tl.to(letters, {
     opacity: 0,
     y: -20,
@@ -56,7 +52,6 @@ onMounted(() => {
     duration: 0.1
   })
 
-  // 5) SLACK: 0.9–1.0s (90%–100%) → nothing
   tl.to({}, { duration: 0.1 })
 })
 </script>
